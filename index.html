@@ -17,6 +17,299 @@
 	</header>
 
 	<section class="slide" data-level="0">
+		<h1>Artefacts</h1>
+		<figure>
+			<img src="assets/afbeelding1.png" alt="CT image full of artefacts">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Beam hardening: the principle</h1>
+		<p>X-ray beam (composed of individual photons with a range of energies) </p>
+		<p>As the beam passes through an object, it becomes “harder” = “its mean energy increases” (because the lower energy photons
+			are absorbed more rapidly than the higher-energy photons) </p>
+		<p>Two types of artifacts can result from this effect: </p>
+		<ul>
+			<li>so-called cupping artifacts </li>
+			<li>appearance of dark bands or streaks between dense objects in the image </li>
+		</ul>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Beam hardening</h1>
+		<figure>
+			<img src="assets/k1.png" alt="graphs on attenuation of x-rays">
+			<figcaption>As the average beam energy increases (i.e. the beam hardens), the rate at which it is attenuated decreases => X-rays which
+				pass through a thick slab of material are attenuated less than expected compared to when they pass through a thin slab
+				of material. </figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Beam hardening: cupping artefact</h1>
+		<p>X-rays passing through the middle portion of a uniform cylindrical phantom are hardened more than those passing through
+			the edges because they pass through more material (+ less attenuation than expected) </p>
+		<p>Beam Hardening Correction: hardware and software filters (what is the physical correct value since there is no unique µ
+			in polychromatic CT). </p>
+		<figure>
+			<img src="assets/afbeelding2.png" alt="cupping artefact: schematic">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding3.png" alt="cupping artefact: example">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding4.png" alt="cupping artefact: corrected example">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Streaks and dark bands</h1>
+		<p>Caused by strong heterogeneity in the cross section </p>
+		<p>Appear between two dense objects in an image </p>
+		<p> Occur because the portion of the beam that passes through one of the objects at certain rotation angles is hardened less
+			than when it passes through both objects at other rotation angles. </p>
+		<figure>
+			<img src="assets/k2.png" alt="example of streaks and dark bands">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/k3.png" alt="example of streaks and dark bands">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Cone beam artefacts</h1>
+		<p>In cone beam reconstruction, only central slice is reconstructed accurately </p>
+		<p> Deviation from exact solution larger for larger cone angles </p>
+		<figure>
+			<img src="assets/afbeelding8.png" alt="Cone beam artefacts">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding9.png" alt="Cone beam artefacts">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Cone beam artefacts</h1>
+		<p>In cone beam reconstruction, only central slice is reconstructed accurately </p>
+		<p>Deviation from exact solution larger for larger cone angles </p>
+		<p>Solution: helical scanning </p>
+		<figure>
+			<img src="assets/afbeelding10.png" alt="schematic helical scanning">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding11.png" alt="example of difference between conical and helical scanning">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Phase contrast</h1>
+		<p>Caused by refraction of X-rays at object </p>
+		<p>Gives rise to « edge enhancement » effect </p>
+		<p>Can yield improved visibility for small features </p>
+		<figure>
+			<img src="assets/afbeelding12.png" alt="schematic phase contrast">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding13.png" alt="example phase contrast">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Phase contrast</h1>
+		<p>Caused by refraction of X-rays at object </p>
+		<p>Gives rise to « edge enhancement » effect </p>
+		<p>Can yield improved visibility for small features </p>
+		<p><strong>BUT: artificial edges are bothersome in interpretation and analysis			</strong></p>
+		<figure>
+			<img src="assets/k5.png" alt="examples of artificial edges">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Phase contrast</h1>
+		<p>Several algorithms to correct for and even benefit from phase information </p>
+		<figure>
+			<img src="assets/afbeelding16.png" alt="example phase contrast improvements">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Rings</h1>
+		<p>Caused by non-linear response of detector pixels or areas in the detector </p>
+		<p>Several “ring reduction” algorithms exist, yet they are sometimes hard to correct for </p>
+		<figure>
+			<img src="assets/afbeelding17.png" alt="example rings">
+			<figcaption></figcaption>
+		</figure>
+		<figure>
+			<img src="assets/afbeelding18.png" alt="example rings corrected">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Motion artefacts</h1>
+		<p>Caused by movement during scanning; e.g. fluid transport </p>
+		<figure>
+			<img src="assets/afbeelding19.png" alt="example fluid artefacts">
+			<figcaption></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide" data-level="0">
+		<div class='quiz'>
+			<h1 class='quiz-question'>In order to have a high resolution, you need:</h1>
+			<ol class='quiz-answers'>
+				<li>A very dense sample </li>
+				<li>A very high flux </li>
+				<li>A very high spot size </li>
+			</ol>
+		</div>
+
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<div class='quiz'>
+			<h1 class='quiz-question'>Synchrotron has the disadvantage…</h1>
+			<ol class='quiz-answers'>
+				<li>to have long scanning times </li>
+				<li>to have a low resolution </li>
+				<li>to be monochromatic </li>
+				<li>to be difficult to have acces to </li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Some acquisition settings</h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Choosing X-ray spectrum</h1>
+		<p>At synchrotron: white beam vs. pink beam vs. quasimonochromatic beam</p>
+		<ul>
+			<li>white beam: more X-ray flux, more imaging artefacts</li>
+			<li>quasi-monochromatic beam: low X-ray flux, very high quality</li>
+		</ul>
+		<p>At laboratory: </p>
+		<ul>
+			<li>Choose tube voltage: higher tube voltage yields higher transmission (large objects) but more noise </li>
+			<li>Choose beam filter: reduce beam hardening artefacts, but at the cost of less X-ray flux </li>
+			<li>Match with X-ray detector/scintillator and object! </li>
+		</ul>
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1>Choose rotation speed</h1>
+		<ul>
+			<li>Long scanning times yields less image noise </li>
+			<li>Poisson statistics </li>
+			<li>Frame averaging </li>
+			<li>Scanning cost: reduce scanning time </li>
+			<li>Dose deposition </li>
+			<li>Sample must remain stable during rotation: reduce scanning time in some cases </li>
+			<li>For imaging of dynamic processes: choose fast rotation (large amount of noise) </li>
+		</ul>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
+		<h1></h1>
+
+	</section>
+
+	<section class="slide" data-level="0">
 		<h1></h1>
 
 	</section>
